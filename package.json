@@ -1,0 +1,35 @@
+{
+  "name": "reactnetcore",
+  "version": "1.0.0",
+  "description": "demo de reactjs en netcore",
+  "main": "Startup.cs",
+  "scripts": {
+    "clean": "rimraf Scripts/build wwwroot/* gulpfile.js",
+    "gulpfile": "babel gulpfile.babel.js --out-file gulpfile.js --presets es2015",
+    "deploy": "gulp all"
+  },
+  "author": "Jeffrey Aguirre",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-standalone": "^6.19.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-change": "^1.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-uglify": "^2.0.0",
+    "npm-run-all": "^3.1.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "rimraf": "^2.5.4"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.5",
+    "jquery": "3.1.1",
+    "tether": "^1.4.0"
+  }
+}

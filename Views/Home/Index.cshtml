@@ -1,0 +1,46 @@
+@model ReactNetCore.ViewModels.Home.IndexVM
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TodoList)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <button class="btn btn-danger" onclick="openModal('@item.Name')">Eliminar</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script type="text/babel">
+        
+        function openModal(name) {
+            ReactDOM.render(
+                <Modal title="ToDo" cancelSubmit="true">
+                    <p>Está seguro de eliminar la tarea {name}?</p>
+                </Modal>,
+                document.getElementById('myModal')
+            );
+            $('#myModal').modal('show');
+        }
+
+    </script>
+}
